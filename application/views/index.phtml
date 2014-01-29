@@ -1,0 +1,35 @@
+<!Doctype HTML>
+<html>
+    <head>
+        <title>PhalconDebate - Home</title>
+        {{ stylesheet_link("css/default.css") }}
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>Sindrenj.net</h1>
+            </header>
+            <nav>
+               <ul id="navigation">
+                 <li><a href="http://localhost/PhalconDebate">Home</a></li>
+                 <li><a href="Index/About">About me<a></li>
+                 <li><a href="http://localhost/PhalconDebate">Projects</a></li>
+                 <!--<li><a href="Users/Create">Register<a></li>
+                 <li><a href="Users/Login">Login<a></li>-->
+               </ul>
+            </nav>
+            <section id="main">
+                <?php echo $this->getContent() ?>
+            </section>
+            <aside>
+                <h3>Logininfo:</h3>
+                <?php if( isset($username) ) {
+                    echo "<p>Hello " . $username ."!</p>";
+                }
+                ?>
+            </aside>
+            <footer>Sindrenj.net - Personal homepage for Sindre Njøsen</footer>
+        </div>
+     </body>
+</html>

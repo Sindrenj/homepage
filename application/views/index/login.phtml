@@ -1,0 +1,13 @@
+<?php 
+    use Phalcon\Tag; 
+    //Create the form
+    echo Tag::form(array("users/login", "method" => "post"));
+?>
+    <p>
+        <label>Username</label>
+        <input type="text" name="username" />
+        <label>Password</label>
+        <input type="password" name="password">
+        <input type="submit" name="btnLogin" value="login"/>
+    </p>
+</form>
