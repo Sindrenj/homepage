@@ -2,17 +2,21 @@
 
 class Post extends \Phalcon\Mvc\Model {
     
-    protected $id = 0;
+    public $id = 0;
     
-    protected $headline;
+    public $headline;
     
-    protected $content;
+    public $content;
     
-    protected $createdBy;
+    public $createdBy;
     
-    protected $created;
+    public $created;
     
     public function set($variable, $value) {
         $this->$variable = $value;
+    }
+    
+    public function getAllOrderByNewest() {
+        return $this::find( array("order" => "id DESC"));
     }
 }

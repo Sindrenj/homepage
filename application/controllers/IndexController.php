@@ -5,7 +5,7 @@ class IndexController extends \Phalcon\Mvc\Controller {
         $posts = new Post();
         
         $this->view->setVar('username', $this->session->get('auth')['username']);
-        $this->view->setVar('posts', $posts->)
+        $this->view->setVar('posts', $posts->getAllOrderByNewest());
     }
   
     public function aboutAction() {
