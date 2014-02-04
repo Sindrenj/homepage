@@ -80,5 +80,5 @@
         
     } catch (\Phalcon\Exception $e) {
         //Error in the application
-        echo "Error: " . $e->getMessage();
+        echo "<div style='border: 3px solid red; padding: 10px; margin: 20px;'><b>Error:</b> " . $e->getMessage() . "</div>";
     }

@@ -3,7 +3,9 @@
 class PostsController extends \Phalcon\Mvc\Controller {
     
     public function indexAction() {
-        
+        //Find all the posts:
+        $posts = new Post();
+        $this->view->setVar('posts', $posts->find());
     }
     
     public function createAction() {
@@ -31,6 +33,12 @@ class PostsController extends \Phalcon\Mvc\Controller {
     }
     
     public function editAction( $id ) {
+        //Find post(s)
+        $this->view->setVar('post', Post::findFirst(array('id =' . $id )));
+        $this->view->setVar('posts', Post::find());
+    }
+    
+    public function updateAction() {
         
     }
     

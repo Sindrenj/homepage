@@ -1,8 +1,16 @@
-<?php foreach($posts as $post) { ?>
-    <article>
-        <h2><?php echo $post->headline; ?></h2>
-        <p>
-          <?php echo $post->content; ?>
-        </p>
-    </article>
-<?php } ?>
+<section id="main">
+    <?php foreach($posts as $post) { ?>
+        <article>
+            <h2><?php echo $post->headline; ?></h2>
+              <?php echo $post->content; ?>
+             <a href="#">more..</a>
+        </article>
+    <?php } ?>
+    <ul id="pagination">
+        <li><a href="#">&#60;&#60;</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">&#62;&#62;</a></li>
+    </ul>
+</section>

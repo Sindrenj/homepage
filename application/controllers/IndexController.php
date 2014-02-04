@@ -6,6 +6,8 @@ class IndexController extends \Phalcon\Mvc\Controller {
         
         $this->view->setVar('username', $this->session->get('auth')['username']);
         $this->view->setVar('posts', $posts->getAllOrderByNewest());
+        //Remember to set the page-title:
+        $this->view->setVar('pageTitle', 'Home');
     }
   
     public function aboutAction() {
@@ -15,6 +17,9 @@ class IndexController extends \Phalcon\Mvc\Controller {
         } else {
             echo "You have no access here.";
         }
+        
+        //Remember to set the page-title:
+        $this->view->setVar('pageTitle', 'About');
     }
     
     public function loginAction() {
