@@ -1,0 +1,8 @@
+
+    <?php foreach($projects as $project) { ?>
+    <article>
+        <h2><?php= $project->name ?></h2>
+        <img class="projectImage" src="<?= $project->image ?>" />
+        <p><?php= $project->description ?></p>
+    </article>
+    <?php } ?>
