@@ -1,6 +1,6 @@
 <?php
 
-class Project {
+class Project extends \Phalcon\Mvc\Model{
     
     public $id;
     
@@ -12,10 +12,7 @@ class Project {
     
     public $image;
     
-    public function __construct($id, $name, $desc, $author) {
-        $this->id = $id;
-        $this->name = $name;
-        $this->description = $desc;
-        $this->author = $author;
+    public function set($variable, $value) {
+       $this->$variable = $value;
     }
 }

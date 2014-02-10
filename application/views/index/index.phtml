@@ -1,16 +1,23 @@
 <section id="main">
-    <?php foreach($posts as $post) { ?>
+    <?php foreach($page->items as $post) { ?>
         <article>
             <h2><?php echo $post->headline; ?></h2>
               <?php echo $post->content; ?>
              <a href="#">more..</a>
         </article>
-    <?php } ?>
+    <?php } 
+     if($page->total_pages > 1){
+    ?>
     <ul id="pagination">
-        <li><a href="#">&#60;&#60;</a></li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">&#62;&#62;</a></li>
+        <?php if($page->current != 1) { ?>
+               <li><a href="/HomePage/index/index?page=1">&#60;&#60;</a></li>
+        <?php } //Print the number-links:
+        for($i = 1; $i <= $page->total_pages; $i++) { ?>
+                <li><a href="/HomePage/index/index?page=<?= $i; ?>" <?php if( $page->current == $i) echo "id='current_page'"; ?> ><?= $i; ?></a></li>
+        <?php } //Print a last-option
+         if($page->current != $page->total_pages) { ?>
+                <li><a href="/HomePage/index/index?page=<?= $page->last ?>">&#62;&#62;</a></li>
+        <?php } ?>       
     </ul>
+     <?php } ?>
 </section>

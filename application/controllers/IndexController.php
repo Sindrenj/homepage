@@ -2,10 +2,18 @@
 class IndexController extends \Phalcon\Mvc\Controller {
     
     public function indexAction() {
+        //Get posts and paginate them:
         $posts = new Post();
+        $pagPosts = new \Phalcon\Paginator\Adapter\Model(
+            array(
+                "data"  => $posts->getAllOrderByNewest(), //The posts
+                "limit" => 4, //Total number of posts
+                "page"  => $this->request->getQuery('page', 'int') //The current page
+            )
+        );
         
         $this->view->setVar('username', $this->session->get('auth')['username']);
-        $this->view->setVar('posts', $posts->getAllOrderByNewest());
+        $this->view->setVar('page', $pagPosts->getPaginate());
         //Remember to set the page-title:
         $this->view->setVar('pageTitle', 'Home');
     }
