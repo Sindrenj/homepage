@@ -32,14 +32,19 @@ class PostsController extends \Phalcon\Mvc\Controller {
         }
     }
     
-    public function editAction( $id ) {
-        //Find post(s)
-        $this->view->setVar('post', Post::findFirst(array('id =' . $id )));
-        $this->view->setVar('posts', Post::find());
+    public function viewAction( $id ) {
+        $post = Post::findFirst(array('id =' . $id));
+        $author = $post->User;
+        var_dump($author);
+        $post->createdBy = $author->firstname . " " . $author->lastname;
+        //Get the post:
+        $this->view->setVar('post',  $post);
     }
     
-    public function updateAction() {
-        
+    public function editAction( $id = null ) {
+        $this->view->setVar('post', Post::findFirst(array('id =' . $id )));
+        $this->view->setVar('posts', Post::find());
+
     }
     
     public function deleteAction( $id ) {

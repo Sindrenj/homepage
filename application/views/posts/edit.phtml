@@ -1,19 +1,3 @@
-<section id="mainCreatePost">
-    <h2>Edit</h2>
-    <?php 
-       use Phalcon\Tag; 
-       //Create the form
-       echo Tag::form(array("Posts/create", "method" => "post"));
-    ?>
-        <label>Headline</label><br>
-        <input type="text" id="txtHeadline" name="txtHeadline" value="{{ post.headline }}"><br>
-        <label>Content</label><br>
-        <textarea id="txtContent" name="txtContent">
-        <?php echo $post->content ?>
-        </textarea><br>
-        <input type="submit" value="Edit" id="btnCreate">
-    </form>
-</section>
 <aside id="right">
     <h2>Posts</h2>
     <ul>
@@ -22,3 +6,21 @@
         } ?>
     </ul>
 </aside>
+<section id="main">
+    <h2>Edit</h2>
+    <?php 
+       use Phalcon\Tag; 
+       //Create the form
+       echo Tag::form(array("Posts/edit", "method" => "post"));
+    ?>
+        <label>Headline</label><br>
+        <input type="text" id="txtHeadline" name="txtHeadline" value="{{ post.headline }}"><br>
+        <label>Content</label><br>
+        <textarea id="txtContent" name="txtContent">
+        <?php echo $post->content ?>
+        </textarea><br>
+        <input type="hidden" value="{{ post.id }}" name="frmId">
+        <input type="submit" value="Edit" id="btnCreate">
+    </form>
+</section>
+

@@ -6,11 +6,19 @@ class Post extends \Phalcon\Mvc\Model {
     
     public $headline;
     
+    public $content_front;
+    
     public $content;
     
     public $createdBy;
     
     public $created;
+    
+    
+    public function initialize()
+    {
+        $this->belongsTo("id", "User", "id");
+    }
     
     public function set($variable, $value) {
         $this->$variable = $value;

@@ -24,6 +24,11 @@ class User extends \Phalcon\Mvc\Model {
     protected $password;
     
     protected $role = 1;
+    
+    public function initialize()
+    {
+        $this->hasMany("id", "Posts", "id");
+    }
         
     public function get( $variable ) {
         return $this->$variable;

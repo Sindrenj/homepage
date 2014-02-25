@@ -1,32 +1,46 @@
-<!Doctype HTML>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Sindrenj.net <?php echo (isset($pageTitle) ? "- " . $pageTitle : ''); //harsh!?> </title>
+        <title>Sindrenj.net <?php echo (isset($pageTitle) ? "- " . $pageTitle : ''); //harsh! ?> </title>
+        <meta charset="UTF-8">
+        <link href='http://fonts.googleapis.com/css?family=Pontano+Sans|Numans' rel='stylesheet' type='text/css'>
         {{ stylesheet_link("css/default.css") }}
-        <meta charset="utf-8">
     </head>
     <body>
         <div id="wrapper">
             <header>
-                <h1><a href="/HomePage/">Sindrenj.net</a></h1>
+                <h1>
+                    Sindrenj.net
+                </h1>
             </header>
-            <div id="mainContent">
-                <nav>
-                   <ul id="navigation">
+            <nav>
+                 <ul id="navigation">
                      <li><a href="http://localhost/HomePage">Home</a></li>
                      <li><a href="/HomePage/Index/About">About me<a></li>
                      <li><a href="/HomePage/Projects/">Projects</a></li>
                      <li><a href="/HomePage/Users/login">Sign in</a></li>
-                     <li><a href="/HomePage/Posts/" class="navAdmin">Create</a></li>
                    </ul>
-                </nav>  
-                <?php echo $this->getContent() ?>
-            </div>
-            <!-- "Push" is simply added to enable a sticky footer -->
-            <div id="push"></div>
+                <!--<form action="" method="GET" id="search">
+                        <input type="text" id="txtSearch">
+                </form> -->
+            </nav>
+            <?php echo $this->getContent() ?>
+            <!--<section id="main">
+                    <article>
+                            <h3>Tittel</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            <a href="#" class="readMoreLink"><b>more..</b></a>
+                    </article>
+                    <article>
+                            <h3>Tittel</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                            <a href="#" class="readMoreLink"><b>more..</b></a>
+                    </article>
+            </section> -->
+            <!-- <div id="push"></div> -->
+            <footer>
+                <p id="footerTextLeft">By Sindre Njøsen</p><p id="footerTextRight"><a href="http://www.phalconphp.com">PhalconPHP</a></p>
+            </footer>
         </div>
-        <footer>
-            <p id="footerContentLeft">Sindrenj.net - Personal homepage for Sindre Njøsen</p><a href="http://phalconphp.com" id="footerLinkRight">powered by PhalconPHP</a>
-        </footer>
-     </body>
+    </body>
 </html>

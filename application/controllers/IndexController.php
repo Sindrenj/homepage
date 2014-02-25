@@ -33,4 +33,13 @@ class IndexController extends \Phalcon\Mvc\Controller {
     public function loginAction() {
         echo "Hello!";
     }
+    
+    public function searchAction() {
+        //Build the query:
+        $results = Post::find(array(
+            "conditions" => "headline LIKE '%" . $query . "%'"
+        ));
+        //Assign the search-results to the view:
+        $this->view->setVar('results', $results);
+    }
 }

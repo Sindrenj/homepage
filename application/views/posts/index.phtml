@@ -1,4 +1,12 @@
-<section id="mainCreatePost">
+<aside id="right">
+    <h2>Posts</h2>
+    <ul>
+        <?php foreach($posts as $post) { 
+            echo "<li><a href='/HomePage/posts/edit/" . $post->id . "'>" . $post->headline . "</a></li>";
+        } ?>
+    </ul>
+</aside>
+<section id="main">
     <h2>Create a new post!</h2>
     <?php 
        use Phalcon\Tag; 
@@ -13,11 +21,4 @@
         <input type="submit" value="Create" id="btnCreate">
     </form>
 </section>
-<aside id="right">
-    <h2>Posts</h2>
-    <ul>
-        <?php foreach($posts as $post) { 
-            echo "<li><a href='/HomePage/posts/edit/" . $post->id . "'>" . $post->headline . "</a></li>";
-        } ?>
-    </ul>
-</aside>
+

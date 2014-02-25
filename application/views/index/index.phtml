@@ -1,23 +1,35 @@
-<section id="main">
-    <?php foreach($page->items as $post) { ?>
-        <article>
-            <h2><?php echo $post->headline; ?></h2>
-              <?php echo $post->content; ?>
-             <a href="#">more..</a>
-        </article>
-    <?php } 
-     if($page->total_pages > 1){
-    ?>
-    <ul id="pagination">
-        <?php if($page->current != 1) { ?>
-               <li><a href="/HomePage/index/index?page=1">&#60;&#60;</a></li>
-        <?php } //Print the number-links:
-        for($i = 1; $i <= $page->total_pages; $i++) { ?>
-                <li><a href="/HomePage/index/index?page=<?= $i; ?>" <?php if( $page->current == $i) echo "id='current_page'"; ?> ><?= $i; ?></a></li>
-        <?php } //Print a last-option
-         if($page->current != $page->total_pages) { ?>
-                <li><a href="/HomePage/index/index?page=<?= $page->last ?>">&#62;&#62;</a></li>
-        <?php } ?>       
+<aside id="right">
+    <h2>Posts</h2>
+    <ul>
+        <li><a href="#">Blogginnleggnummer1</a></li>
+        <li><a href="#">Blogginnleggnummer2</a></li>
+        <li><a href="#">Blogginnleggnummer3</a></li>
     </ul>
-     <?php } ?>
+    <h2>Categories</h2>
+    <ul>
+        <li><a href="#">Kategorinummer1</a></li>
+        <li><a href="#">Kategorinummer2</a></li>
+        <li><a href="#">Kategorinummer3</a></li>
+    </ul>
+    <h2>Tutorials</h2>
+    <ul>
+        <li><a href="#">Kategorinummer1</a></li>
+        <li><a href="#">Kategorinummer2</a></li>
+        <li><a href="#">Kategorinummer3</a></li>
+    </ul>
+    <h2>Projects</h2>
+    <ul>
+        <li><a href="#">Vennernummer1</a></li>
+        <li><a href="#">Vennernummer2</a></li>
+        <li><a href="#">Vennernummer3</a></li>
+    </ul>
+</aside>
+<section id="main">
+    <?php foreach ($page->items as $post) { ?>
+        <article>
+            <h3><?php echo $post->headline; ?></h3>
+            <?php echo $post->content_front; ?>
+            <a href="/HomePage/posts/view/<?= $post->id ?>" class="readMoreLink">more..</a>
+        </article>
+    <?php } ?>
 </section>
