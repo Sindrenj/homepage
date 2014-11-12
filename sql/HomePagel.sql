@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `firstname`, `lastname`, `email`, `password`, `role`) VALUES
-(0, 'Sindre', 'Njøsen', 'sind_nj@hotmail.com', '$2a$12$ZOtLsJjCqFWWtKcX6nxwg.v.DNeQLrPAXAt/Mlxw8HERQASrT0Nfy', 1);
+(0, 'Sindre', 'nj', 's@mail.com', 'jasdoijsaoij', 1);
 
 --
 -- Begrensninger for dumpede tabeller
